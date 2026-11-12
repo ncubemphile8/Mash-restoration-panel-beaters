@@ -1,4 +1,4 @@
-// Mash Restoration finishing behaviours: fast, high-detail 3D viewer and progressive reveal.
+// Mash Restoration finishing behaviours: responsive 3D loading and full scene visibility.
 (() => {
   const modelFrame = document.getElementById("model-frame");
   const modelButtons = [
@@ -21,6 +21,22 @@
     return sketchfabApiLoading;
   };
 
+  const revealAllModelParts = api => {
+    // Some Sketchfab uploads contain nodes saved as hidden. Show every node
+    // so wheels, tyres and other sub-meshes are not accidentally left invisible.
+    if (typeof api.getNodeMap !== "function" || typeof api.show !== "function") return;
+    api.getNodeMap((error, nodes) => {
+      if (error || !nodes) return;
+      Object.keys(nodes).forEach(key => {
+        const node = nodes[key];
+        const instanceId = Number(node && (node.instanceID ?? node.instanceId ?? key));
+        if (Number.isFinite(instanceId)) {
+          api.show(instanceId, () => {});
+        }
+      });
+    });
+  };
+
   const loadModel = async () => {
     if (!modelFrame || modelFrame.dataset.loaded === "true") return;
     modelFrame.dataset.loaded = "true";
@@ -29,11 +45,11 @@
     const status = document.createElement("div");
     status.className = "model-loading-status";
     status.setAttribute("role", "status");
-    status.textContent = "Preparing the high-detail 3D model…";
+    status.textContent = "Preparing the complete 3D vehicle…";
     modelFrame.appendChild(status);
 
     const iframe = document.createElement("iframe");
-    iframe.title = "Interactive 3D Ford F-150 Raptor model";
+    iframe.title = "Interactive 3D vehicle model";
     iframe.allow = "autoplay; fullscreen; xr-spatial-tracking";
     iframe.allowFullscreen = true;
     iframe.loading = "eager";
@@ -42,6 +58,9 @@
     modelFrame.insertBefore(iframe, status);
     if (placeholder) placeholder.remove();
 
+    const textureCap = window.matchMedia("(max-width: 768px)").matches ? 2048 : 4096;
+    const embedUrl = "https://sketchfab.com/models/0ed826c3da6d48ed880915bf8b4d6185/embed?autostart=1&camera=0&preload=0&max_texture_size=" + textureCap + "&ui_infos=0&ui_watermark=0&ui_theme=dark&dnt=1";
+
     try {
       await loadSketchfabApi();
       const client = new window.Sketchfab(iframe);
@@ -49,33 +68,30 @@
         autostart: 1,
         camera: 0,
         preload: 0,
-        max_texture_size: 4096,
+        max_texture_size: textureCap,
         ui_infos: 0,
         ui_watermark: 0,
         ui_theme: "dark",
         dnt: 1,
         success: api => {
           api.addEventListener("viewerready", () => {
-            status.textContent = "Finishing high-definition textures…";
+            revealAllModelParts(api);
+            status.textContent = "Finishing vehicle details…";
             api.setTextureQuality("hd", error => {
-              if (!error) {
-                modelFrame.classList.remove("model-loading");
-                modelFrame.classList.add("model-ready");
-                status.remove();
+              modelFrame.classList.remove("model-loading");
+              modelFrame.classList.add("model-ready");
+              if (error) {
+                status.textContent = "3D model ready — standard textures are being used.";
+                window.setTimeout(() => status.remove(), 2600);
               } else {
-                status.textContent = "3D model ready — loading standard textures.";
-                window.setTimeout(() => status.remove(), 2400);
-                modelFrame.classList.remove("model-loading");
+                status.remove();
               }
             });
-          });
-          api.addEventListener("textureLoadProgress", progress => {
-            if (progress >= 1 && modelFrame.classList.contains("model-ready")) status.remove();
           });
           api.start();
         },
         error: () => {
-          iframe.src = "https://sketchfab.com/models/0ed826c3da6d48ed880915bf8b4d6185/embed?autostart=1&camera=0&preload=0&max_texture_size=4096&ui_infos=0&ui_watermark=0&ui_theme=dark&dnt=1";
+          iframe.src = embedUrl;
           status.textContent = "Loading interactive 3D model…";
           iframe.addEventListener("load", () => {
             modelFrame.classList.remove("model-loading");
@@ -84,8 +100,7 @@
         }
       });
     } catch (error) {
-      // Lightweight iframe fallback if the Viewer API script is unavailable.
-      iframe.src = "https://sketchfab.com/models/0ed826c3da6d48ed880915bf8b4d6185/embed?autostart=1&camera=0&preload=0&max_texture_size=4096&ui_infos=0&ui_watermark=0&ui_theme=dark&dnt=1";
+      iframe.src = embedUrl;
       status.textContent = "Loading interactive 3D model…";
       iframe.addEventListener("load", () => {
         modelFrame.classList.remove("model-loading");
@@ -93,11 +108,12 @@
       }, { once: true });
     }
   };
+
   modelButtons.forEach(button => button.addEventListener("click", loadModel));
 
   const reveal = document.querySelectorAll(".section-wrap,.service-card,.case-card,.step,.quote-panel,.contact-grid,.detail-photo");
-  reveal.forEach((element,index) => {
-    if (!element.hasAttribute("data-reveal")) element.setAttribute("data-reveal","");
+  reveal.forEach((element, index) => {
+    if (!element.hasAttribute("data-reveal")) element.setAttribute("data-reveal", "");
     if (element.classList.contains("service-card") || element.classList.contains("case-card")) {
       element.setAttribute("data-reveal-delay", String((index % 3) + 1));
     }
@@ -110,7 +126,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {threshold:0.12, rootMargin:"0px 0px -32px 0px"});
+    }, { threshold: 0.12, rootMargin: "0px 0px -32px 0px" });
     document.querySelectorAll("[data-reveal]").forEach(element => observer.observe(element));
   } else {
     document.querySelectorAll("[data-reveal]").forEach(element => element.classList.add("is-visible"));
