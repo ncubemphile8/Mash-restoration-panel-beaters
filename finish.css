@@ -1,0 +1,100 @@
+/* MASH RESTORATION — FINAL MEDIA, 3D AND MOBILE REFINEMENT */
+.brand-logo{display:block;width:clamp(158px,18vw,206px);height:auto;max-height:72px;object-fit:contain;background:#fff}
+.brand-light .brand-logo{padding:4px 7px;border-radius:3px;background:#fff;max-height:56px}
+.hero{min-height:clamp(650px,88vh,900px);height:clamp(650px,88vh,900px)}
+.hero-gif{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;opacity:1;filter:contrast(1.04) saturate(.94)}
+.hero-shade{z-index:1;background:linear-gradient(90deg,rgba(3,14,29,.92) 0%,rgba(4,18,36,.76) 46%,rgba(4,18,36,.25) 100%),linear-gradient(0deg,rgba(3,13,27,.68),transparent 58%)}
+.hero-content,.hero-index,.scroll-cue{z-index:2}
+.hero-content{max-width:740px}
+.hero h1{font-size:clamp(64px,8.3vw,112px);letter-spacing:-.02em}
+.hero-content>p{max-width:510px;font-size:clamp(14px,1.25vw,17px)}
+.hero-actions .btn{min-height:56px;padding-inline:25px}
+.hero-proof{margin-top:64px}
+.section-head h2,.intro h2,.contact-grid h2,.process-grid h2,.quote-copy h2{letter-spacing:-.025em}
+.case-image{min-height:250px}
+.case-image .photo-sprite{position:absolute;inset:0;width:100%;height:100%}
+.photo-sprite{display:block;background-image:url('assets/hilux-gallery-sprite.webp');background-repeat:no-repeat;background-size:300% 400%;background-color:#dfe4e8;min-height:260px}
+.sprite-0{background-position:0% 0%}.sprite-1{background-position:50% 0%}.sprite-2{background-position:100% 0%}
+.sprite-3{background-position:0% 33.3333%}.sprite-4{background-position:50% 33.3333%}.sprite-5{background-position:100% 33.3333%}
+.sprite-6{background-position:0% 66.6667%}.sprite-7{background-position:50% 66.6667%}.sprite-8{background-position:100% 66.6667%}
+.sprite-9{background-position:0% 100%}.sprite-10{background-position:50% 100%}
+.detail-photo{background:#eef1f4}
+.detail-photo .photo-sprite{width:100%;min-height:300px;aspect-ratio:16/10}
+.detail-photo.large .photo-sprite{min-height:350px;aspect-ratio:16/9}
+.detail-photo figcaption{padding:18px 21px}
+.detail-photo figcaption p{margin-bottom:0}
+.detail-back{margin-top:28px;font-size:11px;font-weight:800;color:var(--blue)}
+.detail-back a{display:inline-flex;align-items:center;gap:10px;border-bottom:2px solid var(--yellow);padding-bottom:8px}
+.detail-back a:hover{transform:translateX(-3px)}
+.interactive-section{display:grid;grid-template-columns:.83fr 1.17fr;gap:55px;align-items:center;padding:105px 0 115px}
+.interactive-copy h2{font:900 clamp(46px,5.3vw,70px)/.9 "Barlow Condensed";margin:23px 0}
+.interactive-copy h2 em{font-style:normal;color:var(--blue)}
+.interactive-copy>p{font-size:13px;line-height:1.85;color:#697481;max-width:430px}
+.model-disclaimer{font-size:10px!important;color:#87929e!important;border-left:3px solid var(--yellow);padding:9px 0 9px 13px;margin:20px 0}
+.model-credit{font-size:10px;color:#7c8792;line-height:1.7;margin-top:17px;max-width:440px}
+.model-credit a{color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.model-frame{position:relative;aspect-ratio:16/10;min-height:320px;overflow:hidden;background:radial-gradient(circle at 60% 35%,#244c73,#0a203b 70%);border:1px solid #193e62;box-shadow:0 22px 56px #06192f1c}
+.model-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.model-placeholder{position:absolute;inset:0;display:flex;align-items:flex-end;padding:26px;color:#fff;overflow:hidden;background:linear-gradient(0deg,rgba(3,13,26,.9),rgba(3,13,26,.02) 80%)}
+.model-placeholder-art{position:absolute;inset:0;background-image:url('https://media.sketchfab.com/models/0ed826c3da6d48ed880915bf8b4d6185/thumbnails/d3c4c9fc685f48f1bbe785148ceed1dc/906b40027f8e47298a8913c5d19d9487.jpeg');background-position:center;background-size:cover;opacity:.72;transition:transform .8s}
+.model-frame:hover .model-placeholder-art{transform:scale(1.045)}
+.model-placeholder-copy{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;max-width:80%}
+.model-placeholder-copy span{font-size:9px;letter-spacing:.18em;color:var(--yellow);font-weight:800}
+.model-placeholder-copy strong{font:900 clamp(26px,3vw,42px)/.95 "Barlow Condensed"}
+.model-placeholder-copy small{font-size:10px;color:#d5dce4}
+.model-load-button{position:absolute;right:25px;bottom:25px;z-index:2;border:0;background:var(--yellow);color:#101820;width:54px;height:54px;font-size:24px;cursor:pointer;transition:transform .2s,background .2s}
+.model-load-button:hover{transform:translateY(-4px);background:#ffdc55}
+.interactive-copy .btn{margin-top:8px}
+.footer .brand-logo{width:182px}
+.footer-social a{color:var(--yellow);font-weight:800;font-size:10px}
+.assistant-panel{max-width:calc(100vw - 24px)}
+.reveal-ready [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+ .interactive-section{grid-template-columns:1fr;gap:27px;padding:78px 0 88px}
+ .interactive-copy>p{max-width:650px}
+ .model-frame{min-height:0;aspect-ratio:16/9}
+}
+@media(max-width:760px){
+ .brand-logo{width:160px;max-height:58px}
+ .brand-light .brand-logo{width:154px}
+ .hero{height:auto;min-height:740px;max-height:none;align-items:flex-end}
+ .hero-gif{object-position:52% center}
+ .hero-shade{background:linear-gradient(90deg,rgba(3,14,29,.84),rgba(3,14,29,.42)),linear-gradient(0deg,rgba(3,13,27,.88),transparent 82%)}
+ .hero-content{margin:0;padding:90px 7% 118px;max-width:none}
+ .hero h1{font-size:clamp(58px,15vw,84px);line-height:.86;margin:23px 0}
+ .hero-content>p{font-size:13px;line-height:1.75}
+ .hero-actions{display:grid;grid-template-columns:1fr;gap:10px}
+ .hero-actions .btn{width:100%;min-height:54px}
+ .hero-proof{margin-top:43px;font-size:8px}
+ .hero-index{right:6%;bottom:23px}
+ .scroll-cue{left:4.5%;bottom:22px}
+ .case-grid{grid-template-columns:1fr;gap:17px}
+ .case-image{height:235px;min-height:235px}
+ .case-body p{min-height:0}
+ .interactive-section{padding:72px 0 78px}
+ .interactive-copy h2{font-size:50px}
+ .interactive-copy>p{font-size:12px}
+ .model-frame{aspect-ratio:4/3;min-height:270px}
+ .model-placeholder{padding:19px}
+ .model-load-button{right:17px;bottom:17px;width:48px;height:48px}
+ .detail-photo .photo-sprite{min-height:235px;aspect-ratio:4/3}
+ .detail-photo.large .photo-sprite{min-height:245px;aspect-ratio:4/3}
+ .detail-photo figcaption{padding:15px 16px}
+ .detail-cta{padding:24px}
+ .footer{gap:15px}
+ .footer .brand-logo{width:150px}
+}
+@media(max-width:420px){
+ .hero{min-height:700px}
+ .hero-content{padding-left:6%;padding-right:6%}
+ .hero h1{font-size:58px}
+ .model-frame{min-height:245px}
+ .model-placeholder-copy{max-width:70%}
+ .model-placeholder-copy strong{font-size:27px}
+}
+@media(prefers-reduced-motion:reduce){
+ .reveal-ready [data-reveal]{opacity:1;transform:none}
+ .hero-gif{animation:none}
+ .model-placeholder-art{transition:none}
+}
