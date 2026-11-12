@@ -11,8 +11,9 @@ Responsive static website for Mash Restoration Panel Beaters, 1 Liverpool Road, 
 
 ## Stack and experience
 - Semantic HTML, responsive CSS and vanilla JavaScript; no build step.
-- Responsive navigation, mobile-specific layouts, reduced-motion support and scroll reveal transitions.
+- Responsive navigation, mobile-first page layouts, reduced-motion support and scroll reveal transitions.
 - The supplied Mash restoration GIF is the homepage hero.
+- The original Mash logo and all supplied Hilux gallery photographs are hosted as public image assets and referenced directly by the site.
 - The 3D viewer is click-to-load so it does not delay the first mobile screen.
 - The quote form creates a prefilled WhatsApp enquiry; the site does not store customer data.
 - Ask Mash is a guided FAQ assistant, not yet a connected generative AI agent.
@@ -23,18 +24,11 @@ Responsive static website for Mash Restoration Panel Beaters, 1 Liverpool Road, 
 - Email: mashrestoration@gmail.com
 - Hours: Monday–Friday, 08:00–17:00
 
-## Media pack — required for the live site
-The source code references the GIF and photo sprite in `assets/`. Upload the contents of the supplied `mash-restoration-final-media-pack.zip` to the repository root, preserving the paths:
-- `assets/mash-logo.svg` (traced from the supplied original) and `assets/mash-restoration-logo.jpg` (original raster copy)
-- `assets/mash-restoration-hero.gif`
-- `assets/mash-restoration-hero-poster.webp`
-- `assets/hilux-gallery-sprite.webp`
-- `assets/photos/*` (the 11 original supplied Hilux photographs)
-
-Once uploaded to the `main` branch, Vercel will automatically rebuild the site and the supplied GIF hero and Hilux galleries will display.
+## Media delivery
+The production pages load the supplied original logo, hero GIF and Hilux photographs from the image CDN. The optional `mash-restoration-final-media-pack.zip` is an archival/local-copy bundle containing the same logo, GIF, optimized gallery sprite and 11 original Hilux photos. It is not required for the live site.
 
 ## Interactive 3D attribution and licensing
-The supplied 2017 Ford F-150 Raptor archive contains a CC BY-NC-SA 4.0 non-commercial licence and is not suitable for a commercial workshop website. The interactive showcase therefore uses a separate Ford F-150 Raptor 2008–2014 model by Merc_TV under CC BY 4.0, with attribution and a link to its source and licence. The model is illustrative and is not presented as a Mash customer vehicle.
+The supplied 2017 Ford F-150 Raptor archive contains a CC BY-NC-SA 4.0 non-commercial licence and is not suitable for a commercial workshop website. The interactive showcase therefore uses a separate Ford F-150 Raptor 2008–2014 model by Merc_TV under CC BY 4.0, with attribution and links to its source and licence. [Model source](https://sketchfab.com/3d-models/ford-f-150-raptor-2008-2014-0ed826c3da6d48ed880915bf8b4d6185) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The model is illustrative and is not presented as a Mash customer vehicle.
 
 ## Deploy
 Vercel project: `mash-restoration-panel-beaters`. Static site, no build command, root output. Clean restoration routes are configured in `vercel.json`.
