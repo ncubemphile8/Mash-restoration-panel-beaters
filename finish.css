@@ -1,6 +1,6 @@
 /* MASH RESTORATION — FINAL MEDIA, 3D AND MOBILE REFINEMENT */
-.brand-logo{display:block;width:clamp(158px,18vw,206px);height:auto;max-height:72px;object-fit:contain;background:#fff}
-.brand-light .brand-logo{padding:4px 7px;border-radius:3px;background:#fff;max-height:56px}
+ .site-header{height:94px;min-height:94px}.brand-logo{display:block;width:174px;height:auto;max-height:87px;object-fit:contain;background:#fff}
+ .brand-light .brand-logo{width:164px;padding:4px 7px;border-radius:3px;background:#fff;max-height:76px}
 .hero{min-height:clamp(650px,88vh,900px);height:clamp(650px,88vh,900px)}
 .hero-gif{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;opacity:1;filter:contrast(1.04) saturate(.94)}
 .hero-shade{z-index:1;background:linear-gradient(90deg,rgba(3,14,29,.92) 0%,rgba(4,18,36,.76) 46%,rgba(4,18,36,.25) 100%),linear-gradient(0deg,rgba(3,13,27,.68),transparent 58%)}
@@ -53,10 +53,10 @@
 @media(max-width:900px){
  .interactive-section{grid-template-columns:1fr;gap:27px;padding:78px 0 88px}
  .interactive-copy>p{max-width:650px}
- .model-frame{min-height:0;aspect-ratio:16/9}
+  .model-frame{min-height:0;aspect-ratio:16/9}.subpage-nav{top:78px}
 }
 @media(max-width:760px){
- .brand-logo{width:160px;max-height:58px}
+  .site-header{height:78px;min-height:78px}.brand-logo{width:148px;max-height:74px}.brand-light .brand-logo{width:144px;max-height:66px}
  .brand-light .brand-logo{width:154px}
  .hero{height:auto;min-height:740px;max-height:none;align-items:flex-end}
  .hero-gif{object-position:52% center}
