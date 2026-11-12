@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Mash Restoration Panel Beaters — Built Back Better</title>
+<desc id="desc">Navy and yellow Mash Restoration promotional artwork with a pickup truck silhouette.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#061629"/><stop offset=".56" stop-color="#123e72"/><stop offset="1" stop-color="#030b15"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#f5c928" stop-opacity=".32"/><stop offset="1" stop-color="#f5c928" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<ellipse cx="1180" cy="310" rx="600" ry="440" fill="url(#glow)"/>
+<path d="M0 680H1600M0 745H1600M140 0V900M1460 0V900" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="3"/>
+<g transform="translate(190 245)">
+ <path d="M70 400 120 255 280 188 670 182 810 224 980 262 1090 305 1145 416 1120 495H20Z" fill="#07111f" stroke="#b6c7d8" stroke-width="10"/>
+ <path d="M300 192 410 90 665 90 775 190Z" fill="#193b5e" stroke="#b6c7d8" stroke-width="9"/>
+ <path d="M420 102 650 102 730 180 345 180Z" fill="#d9e4ee" fill-opacity=".23"/>
+ <path d="M125 260 295 205 405 205 370 294 85 324Z" fill="#1b395a" stroke="#f5c928" stroke-width="6"/>
+ <path d="M805 248 960 287 1080 320 1095 400 850 390Z" fill="#183654" stroke="#f5c928" stroke-width="6"/>
+ <path d="M390 218 665 214 770 283 760 390 340 390Z" fill="#152d47" stroke="#f5c928" stroke-width="8"/>
+ <path d="M445 235 645 230 700 276 400 284Z" fill="#93a5b6" fill-opacity=".3"/>
+ <path d="M815 248 830 285 1010 315 1010 360 850 350Z" fill="#8292a2" fill-opacity=".2"/>
+ <path d="M80 337 245 320 340 360 325 430 88 430Z" fill="#f5c928" fill-opacity=".19" stroke="#f5c928" stroke-width="6"/>
+ <path d="M740 345 930 338 1075 370 1080 436 760 430Z" fill="#f5c928" fill-opacity=".12" stroke="#f5c928" stroke-width="6"/>
+ <circle cx="260" cy="440" r="106" fill="#03080f" stroke="#a5b4c3" stroke-width="14"/><circle cx="260" cy="440" r="49" fill="#173858" stroke="#f5c928" stroke-width="10"/>
+ <circle cx="900" cy="440" r="106" fill="#03080f" stroke="#a5b4c3" stroke-width="14"/><circle cx="900" cy="440" r="49" fill="#173858" stroke="#f5c928" stroke-width="10"/>
+ <path d="M525 195 490 270 575 260 545 330 650 300" fill="none" stroke="#f5c928" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100" y="110" fill="#f5c928" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="9">MASH RESTORATION / PANEL BEATERS</text>
+<text x="100" y="820" fill="#fff" font-family="Arial,sans-serif" font-size="62" font-weight="900" letter-spacing="3">BUILT BACK BETTER.</text>
+<path d="M100 850H650" stroke="#f5c928" stroke-width="8"/>
+</svg>
